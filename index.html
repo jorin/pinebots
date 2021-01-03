@@ -39,6 +39,7 @@
       #bot.dark .accent-stroke { stroke: rgba(153, 153, 153, 0.25); }
 
       #bot-extras {
+        pointer-events: none;
         left: 0;
         top: 0;
       }
@@ -50,6 +51,7 @@
       .data { font-family: 'Major Mono Display', monospace; }
 
       .fill-base { fill: #eb9; }
+      .fill-brass { fill: #dc9018; }
       .fill-very-dark { fill: rgba(0, 0, 0, 0.7); }
       .fill-walnut { fill: #321; }
       .stroke-brass { stroke: #dc9018; }
@@ -302,6 +304,19 @@
                       <circle cx='169' cy='35' r='6' class='fill-base' />
                     </svg>
                   </div>
+                  <div class='carousel-item'>
+                    <svg viewBox='0 0 320 80' width='100%'>
+                      <rect class='fill' fill='#fff' x='140' y='30' width='40' height='40' />
+
+                      <circle cx='151' cy='48' r='7.5' class='accent-stroke' fill='none' stroke-width='2' />
+                      <circle cx='151' cy='48' r='5.5' class='accent-stroke' fill='none' />
+                      <circle cx='169' cy='48' r='7.5' class='accent-stroke' fill='none' stroke-width='2' />
+                      <circle cx='169' cy='48' r='5.5' class='accent-stroke' fill='none' />
+
+                      <path class='fill-base' d='M 145 15 C 140 15, 135 25, 140 30 H 150 C 150 30, 145 25, 145 15 Z' />
+                      <path class='fill-base' d='M 175 15 C 180 15, 185 25, 180 30 H 170 C 170 30, 175 25, 175 15 Z' />
+                    </svg>
+                  </div>
                 </div>
                 <a class='carousel-control-prev' href='#bot-head' role='button' data-slide='prev'>
                   <span class='carousel-control-prev-icon' aria-hidden='true'></span>
@@ -399,6 +414,18 @@
                       <rect class='fill' fill='#fff' x='210' y='160' width='20' height='20' />
                     </svg>
                   </div>
+                  <div class='carousel-item'>
+                    <svg viewBox='0 80 320 100' width='100%'>
+                      <rect class='fill' fill='#fff' x='135' y='80' width='50' height='19' />
+                      <rect class='fill' fill='#fff' x='130' y='100' width='60' height='60' />
+
+                      <path class='stroke-brass' d='M 130 90 C 110 100, 100 130, 100 140' stroke='#fff' stroke-width='4' fill='none' />
+                      <rect class='fill' fill='#fff' x='85' y='150' width='30' height='30' />
+
+                      <path class='stroke-brass' d='M 190 90 C 210 100, 220 130, 220 140' stroke='#fff' stroke-width='4' fill='none' />
+                      <rect class='fill' fill='#fff' x='205' y='150' width='30' height='30' />
+                    </svg>
+                  </div>
                 </div>
                 <a class='carousel-control-prev' href='#bot-body' role='button' data-slide='prev'>
                   <span class='carousel-control-prev-icon' aria-hidden='true'></span>
@@ -433,6 +460,17 @@
                       <rect class='fill' fill='#fff' x='180' y='220' width='20' height='10' />
                     </svg>
                   </div>
+                  <div class='carousel-item'>
+                    <svg viewBox='0 160 320 80' width='100%'>
+                      <rect class='fill' fill='#fff' x='139' y='170' width='12' height='30' />
+                      <rect class='fill' fill='#fff' x='135' y='210' width='20' height='10' />
+                      <rect class='accent-fill' x='143' y='210' width='4' height='10' />
+
+                      <rect class='fill' fill='#fff' x='169' y='170' width='12' height='30' />
+                      <rect class='fill' fill='#fff' x='165' y='210' width='20' height='10' />
+                      <rect class='accent-fill' x='173' y='210' width='4' height='10' />
+                    </svg>
+                  </div>
                 </div>
                 <a class='carousel-control-prev' href='#bot-legs' role='button' data-slide='prev'>
                   <span class='carousel-control-prev-icon' aria-hidden='true'></span>
@@ -445,6 +483,12 @@
               </div>
 
               <div id='bot-extras' class='position-absolute h-100 w-100'>
+                <div class='d-none position-absolute h-100 w-100' id='handlebar-mustache'>
+                  <svg viewbox='0 0 320 240'>
+                    <path class='stroke-brass' d='M 150 60 C 150 67, 140 70, 135 65 C 130 60, 135 55, 135 55' stroke='#fff' stroke-width='1' fill='none' />
+                    <path class='stroke-brass' d='M 170 60 C 170 67, 180 70, 185 65 C 190 60, 185 55, 185 55' stroke='#fff' stroke-width='1' fill='none' />
+                  </svg>
+                </div>
                 <div class='d-none position-absolute h-100 w-100' id='long-mustache'>
                   <svg viewbox='0 0 320 240'>
                     <path class='stroke-brass' d='M 150 60 C 140 90, 140 130, 140 140' stroke='#fff' stroke-width='1' fill='none' />
@@ -498,6 +542,10 @@
             <h3>Extras</h3>
             <div class='extras'>
               <div class='form-check'>
+                <input class='form-check-input' type='checkbox' value='#handlebar-mustache' id='extra-handlebar-mustache'>
+                <label class='form-check-label' for='extra-handlebar-mustache'>Handlebar Mustache</label>
+              </div>
+              <div class='form-check'>
                 <input class='form-check-input' type='checkbox' value='#long-mustache' id='extra-long-mustache'>
                 <label class='form-check-label' for='extra-long-mustache'>Long Mustache</label>
               </div>
@@ -519,6 +567,7 @@
     <script type='text/javascript'>
       var woods = { base: '#eb9',
                     leopardwood: '#e94',
+                    'padauk wood': '#c42',
                     'purpleheart wood': '#504',
                     'walnut wood': '#321' };
       var darkWoods = ['purpleheart wood', 'walnut wood'];
@@ -566,7 +615,7 @@
           $svg.append($('svg.logo').clone().removeClass('d-none').attr('fill', $bot.find('.fill').css('fill')));
 
           // copy css to inline styles
-          $.each(['.accent-fill', '.fill-base', '.fill-very-dark', '.fill-walnut'], function(_i, c) { $svg.find(c).attr('fill', $bot.find(c).css('fill')); });
+          $.each(['.accent-fill', '.fill-base', '.fill-brass', '.fill-very-dark', '.fill-walnut'], function(_i, c) { $svg.find(c).attr('fill', $bot.find(c).css('fill')); });
           $.each(['.accent-stroke', '.stroke-brass'], function(_i, c) { $svg.find(c).attr('stroke', $bot.find(c).css('stroke')); });
 
           $(this).attr('href', 'data:image/svg+xml;base64,' +
